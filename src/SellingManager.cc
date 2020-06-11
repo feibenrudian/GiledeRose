@@ -10,6 +10,8 @@ std::vector<Selling> SellingManager::GetSellingList() { return selling_list; }
 
 void SellingManager::UpDate() {
   for (auto &one_selling : selling_list) {
+    //储存天数增加
+    one_selling.sell_in_day++;
 
     //普通商品
     if (0 == one_selling.sell_type) {
@@ -43,8 +45,5 @@ void SellingManager::UpDate() {
         one_selling.quality = 0;
       }
     }
-
-    //储存天数增加
-    one_selling.sell_in_day++;
   }
 }
